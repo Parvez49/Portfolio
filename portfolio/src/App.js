@@ -1,9 +1,10 @@
 import logo from './logo.svg';
+import Dashboard from './Pages/Dashboard';
 
 
 function App() {
   return (
-    <h1 className='text-sm text-gray-600'>hello</h1>
+    <Dashboard />
   );
 }
 

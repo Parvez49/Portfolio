@@ -9,7 +9,7 @@ const NavHeader = () => {
     const [ openProfile, setOpenProfile] = useState(false);
     return (
         <div className='w-full px-3 py-3 mx-auto lg:flex lg:justify-between lg:items-center max-w-5xl lg:px-3'>
-            <div className='flex justify-between'>
+            <div className='flex justify-between items-center'>
                 <div className='flex items-center'>
                     <button 
                         onClick={()=>{setOpenProfile(!openProfile)}}
@@ -22,6 +22,10 @@ const NavHeader = () => {
                             />  
                         </span>
                         <span className="self-center ml-3 text-2xl font-semibold whitespace-nowrap dark:text-white">Parvez</span>
+                        <svg className="w-6 h-6 text-blue-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>
+
                     </button>
 
                     {openProfile && (

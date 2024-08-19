@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
 
 const Projects = () => {
-    const [showProject, setShowProject] = useState(false);
+    const [showIconProject, setShowIconProject] = useState(false);
+    const [showPedigreeProject, setShowPedigreeProject] = useState(false);
+    const [showChatProject, setShowChatProject] = useState(false);
+
     const [currentImage, setCurrentImage] = useState(0);
 
     const images = [
-        "/hour_of_code_certificate.jpg",
-        "/man.jpg",
-        "/hour_of_code_certificate.jpg",
-        "/man.jpg"
+        "/Flowbite/flow1.png",
+        "/Flowbite/flow2.png",
+        "/Flowbite/flow3.png",
+        "/Flowbite/flow4.png"
     ];
+
+    const chatImages = [
+        "/Chat/chat1.png",
+        "/Chat/chat2.png",
+        "/Chat/chat3.png",
+        "/Chat/chat3.png"
+    ]
+
+    const pedigreeImages = [
+        "/Pedigree/pedigree1.png",
+        "/Pedigree/pedigree2.png",
+        "/Pedigree/pedigree3.png"
+    ]
 
     const handleNextImage = () => {
         setCurrentImage((prevIndex) => (prevIndex + 1));
@@ -34,7 +50,7 @@ const Projects = () => {
                 <div className='md:w-2/5'>
                     <button className='relative group'>
                         <div 
-                            onClick={()=>setShowProject(!showProject)}
+                            onClick={()=>setShowIconProject(!showIconProject)}
                             className='absolute top-0 left-0 h-full w-full bg-[#1F2A37] rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-60 transition-opacity'>
                             <div className='flex items-center'>
                                 <svg className="text-white mr-1 w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -44,33 +60,33 @@ const Projects = () => {
                             </div>
                         </div> 
                         {/* Image Grid */}
-                        <div className="bg-gray-200 grid grid-cols-2 gap-2">
+                        <div className="bg-white grid grid-cols-2 gap-2 p-2 ">
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Flowbite/flow1.png" 
                                 alt="Project Image 1" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Flowbite/flow2.png" 
                                 alt="Project Image 2" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Flowbite/flow3.png" 
                                 alt="Project Image 3" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Flowbite/flow4.png" 
                                 alt="Project Image 4" 
                                 className="w-full h-full object-cover"
                             />
                         </div>
                     </button>
-                    { showProject && (
+                    { showIconProject && (
                         <div
-                            className='fixed inset-0 top-24 bg-black bg-opacity-50 flex justify-center items-center'
-                            onClick={() => setShowProject(!showProject)}>
+                            className='fixed inset-0 top-24 bg-black bg-opacity-50 flex justify-center items-center z-50'
+                            onClick={() => setShowIconProject(!showIconProject)}>
                             <div 
                                 className='relative flex gap-4 w-11/12 h-3/4 md:w-3/4 md:h-4/5 lg:w-10/12 lg:h-4/5 bg-white p-5 shadow-lg overflow-auto'
                                 onClick={(e) => e.stopPropagation()}>
@@ -111,10 +127,8 @@ const Projects = () => {
                         </div>
                     )}
                     <div className='inline-flex p-2 items-center justify-center w-full'>
-                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Python</span>
-                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Django</span>
                         <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>React</span>
-                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Docker</span>
+                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Tailwind</span>
 
                     </div>
 
@@ -125,31 +139,14 @@ const Projects = () => {
                 <div className="hidden md:block w-0.5 bg-blue-300"></div>
                 
                 {/* Project Details */}
-                <div className="p-5 md:w-3/5 overflow-y-auto h-80">
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
+                <div className="p-5 md:w-3/5 overflow-y-auto h-72">
+                    <h2 className="text-2xl font-bold mb-2">Flowbite Icons</h2>
                     <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
+                        This project involved developing a comprehensive icons page similar to <a href='https://flowbite.com/icons/' target='_blank' className='text-blue-500'> Flowbite Icons page </a>, focusing on user interface and experience. I implemented key functionalities including a light/dark mode toggle, display of various icon types, and advanced filtering and search capabilities to enhance usability.
                     </p>
                     <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
+                        <strong>Role:</strong> Frontend Developer
                     </p>
-
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
-                    <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
-                    </p>
-                    <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
-                    </p>
-
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
-                    <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
-                    </p>
-                    <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
-                    </p>
-                    
 
                     
                 </div>
@@ -159,7 +156,7 @@ const Projects = () => {
                 <div className='md:w-2/5'>
                     <button className='relative group'>
                         <div 
-                            onClick={()=>setShowProject(!showProject)}
+                            onClick={()=>setShowPedigreeProject(!showPedigreeProject)}
                             className='absolute top-0 left-0 h-full w-full bg-[#1F2A37] rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-60 transition-opacity'>
                             <div className='flex items-center'>
                                 <svg className="text-white mr-1 w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -171,38 +168,38 @@ const Projects = () => {
                         {/* Image Grid */}
                         <div className="bg-gray-200 grid grid-cols-2 gap-2">
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Pedigree/pedigree1.png" 
                                 alt="Project Image 1" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Pedigree/pedigree2.png" 
                                 alt="Project Image 2" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Pedigree/pedigree3.png" 
                                 alt="Project Image 3" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Pedigree/pedigree3.png" 
                                 alt="Project Image 4" 
                                 className="w-full h-full object-cover"
                             />
                         </div>
                     </button>
-                    { showProject && (
+                    { showPedigreeProject && (
                         <div
-                            className='fixed inset-0 top-24 bg-black bg-opacity-50 flex justify-center items-center'
-                            onClick={() => setShowProject(!showProject)}>
+                            className='fixed inset-0 top-24 bg-black bg-opacity-50 flex justify-center items-center z-40'
+                            onClick={() => setShowPedigreeProject(!showPedigreeProject)}>
                             <div 
                                 className='relative flex gap-4 w-11/12 h-3/4 md:w-3/4 md:h-4/5 lg:w-10/12 lg:h-4/5 bg-white p-5 shadow-lg overflow-auto'
                                 onClick={(e) => e.stopPropagation()}>
                                 {/* Image Gallery */}
                                 <div className="flex-1 bg-gray-200 relative">
                                     <img 
-                                        src={images[currentImage]} 
+                                        src={pedigreeImages[currentImage]} 
                                         alt="Project Image" 
                                         className="w-full h-full object-fill"
                                     />
@@ -211,7 +208,7 @@ const Projects = () => {
                                         className={`absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 ${currentImage === 0?'opacity-50 cursor-not-allowed':''}`}
                                         disabled={currentImage === 0}
                                     >
-                                        Prev
+                                        Prevvv
                                     </button>
 
                                     <button 
@@ -219,7 +216,7 @@ const Projects = () => {
                                         className={`absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 ${currentImage === images.length-1?'opacity-50 cursor-not-allowed':''}`}
                                         disabled={currentImage === images.length -1}
                                     >
-                                        Next
+                                        Nexttt
                                     </button>
                                 </div>
 
@@ -239,7 +236,8 @@ const Projects = () => {
                         <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Python</span>
                         <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Django</span>
                         <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>React</span>
-                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Docker</span>
+                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>Tailwind</span>
+                        <span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>MySQL</span>
 
                     </div>
 
@@ -251,40 +249,21 @@ const Projects = () => {
                 
                 {/* Project Details */}
                 <div className="p-5 md:w-3/5 overflow-y-auto h-80">
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
+                    <h2 className="text-2xl font-bold mb-2">Pedigree</h2>
                     <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
+                        Pedigree is a project focused on managing and visualizing the hierarchy of patient diseases, aimed at improving patient care and disease tracking. The project is designed to align with the data structure and standards of the OpenEMR project, ensuring seamless integration and interoperability with existing electronic medical records systems.
                     </p>
                     <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
+                        <strong>Role:</strong> Frontend, Backend
                     </p>
-
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
-                    <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
-                    </p>
-                    <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
-                    </p>
-
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
-                    <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
-                    </p>
-                    <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
-                    </p>
-                    
-
-                    
                 </div>
             </div>
 
             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row w-full border-b p-2 m-2">
-                <div className='md:w-2/5'>
+                <div className='md:w-2/5 p-2'>
                     <button className='relative group'>
                         <div 
-                            onClick={()=>setShowProject(!showProject)}
+                            onClick={()=>setShowChatProject(!showChatProject)}
                             className='absolute top-0 left-0 h-full w-full bg-[#1F2A37] rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-60 transition-opacity'>
                             <div className='flex items-center'>
                                 <svg className="text-white mr-1 w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -295,39 +274,39 @@ const Projects = () => {
                         </div> 
                         {/* Image Grid */}
                         <div className="bg-gray-200 grid grid-cols-2 gap-2">
-                            <img 
-                                src="/hour_of_code_certificate.jpg" 
+                            <img  
+                                src="/Chat/chat1.png" 
                                 alt="Project Image 1" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Chat/chat2.png" 
                                 alt="Project Image 2" 
                                 className="w-full h-full object-cover"
                             />
                             <img 
-                                src="/hour_of_code_certificate.jpg" 
+                                src="/Chat/chat3.png" 
                                 alt="Project Image 3" 
                                 className="w-full h-full object-cover"
                             />
-                            <img 
+                            {/* <img 
                                 src="/hour_of_code_certificate.jpg" 
                                 alt="Project Image 4" 
                                 className="w-full h-full object-cover"
-                            />
+                            /> */}
                         </div>
                     </button>
-                    { showProject && (
+                    { showChatProject && (
                         <div
-                            className='fixed inset-0 top-24 bg-black bg-opacity-50 flex justify-center items-center'
-                            onClick={() => setShowProject(!showProject)}>
+                            className='fixed inset-0 top-24 bg-black bg-opacity-50 flex justify-center items-center z-30'
+                            onClick={() => setShowChatProject(!showChatProject)}>
                             <div 
                                 className='relative flex gap-4 w-11/12 h-3/4 md:w-3/4 md:h-4/5 lg:w-10/12 lg:h-4/5 bg-white p-5 shadow-lg overflow-auto'
                                 onClick={(e) => e.stopPropagation()}>
                                 {/* Image Gallery */}
                                 <div className="flex-1 bg-gray-200 relative">
                                     <img 
-                                        src={images[currentImage]} 
+                                        src={chatImages[currentImage]} 
                                         alt="Project Image" 
                                         className="w-full h-full object-fill"
                                     />
@@ -376,32 +355,23 @@ const Projects = () => {
                 
                 {/* Project Details */}
                 <div className="p-5 md:w-3/5 overflow-y-auto h-80">
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
+                    <h2 className="text-2xl font-bold mb-2">ChatApp</h2>
                     <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
+                        ChatApp is a real-time communication platform built using Django on the backend and React on the frontend. It allows two friends to chat in real-time, with additional features like friend search functionality. The application leverages Django Channels for real-time communication and WebSocket for seamless data transfer between the server and client.
                     </p>
                     <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
+                        <strong>Role:</strong> Frontend, Backend
                     </p>
 
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
-                    <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
-                    </p>
                     <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
-                    </p>
-
-                    <h2 className="text-2xl font-bold mb-2">Project Title</h2>
-                    <p className="text-gray-700 mb-4">
-                        A brief description of the project goes here. This should provide an overview of what the project is about and its main features or goals.
-                    </p>
-                    <p className="text-gray-600">
-                        <strong>Role:</strong> Your role in the project (e.g., Frontend Developer, Designer)
-                    </p>
-                    
-
-                    
+                        <strong>Features:</strong> Frontend, Backend
+                        <ul className='list-disc pl-5 space-y-2'>
+                            <li>Real-Time Communication: Two friends can communicate instantly with each other.</li>
+                            <li>Friend Search: Users can search for friends within the app to start a chat.</li>
+                            <li>Django Channels: Used for handling real-time WebSocket connections.</li>
+                            <li>WebSocket: Facilitates live communication between the client and server.</li>
+                        </ul>
+                    </p>                   
                 </div>
             </div>
         </div>
